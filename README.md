@@ -6,7 +6,7 @@
 
 3. Создайте сущность Product (модель, миграцию и контроллер) командой 
 ```
-    php artisan make:model Product -mc.
+    php artisan make:model Product -mc
 ```
 
 4. Опишите миграцию для таблицы products c типами полей:
@@ -19,7 +19,7 @@
 
 5. Выполните миграцию командой 
 ```
-    php artisan migrate.
+    php artisan migrate
 ```
 
 6. Добавьте в файл api.php маршруты:
@@ -28,12 +28,12 @@
 ```
 7. Создайте класс-фабрику для сущности Product c помощью команды 
 ```
-    php artisan make:factory ProductFactory.
+    php artisan make:factory ProductFactory
 ```
 
 8. Создайте класс-наполнитель для сущности Product c помощью команды 
 ```
-    php artisan make:seeder ProductsSeeder.
+    php artisan make:seeder ProductsSeeder
 ```
 
 9. Выполните команду для наполнения базы данных сгенерированными данными.
@@ -48,7 +48,7 @@
 
 12. Создайте тест c помощью команды 
 ```
-    php artisan make:test Products/ProductTest.
+    php artisan make:test Products/ProductTest
 ```
 
 13. Опишите функции:
