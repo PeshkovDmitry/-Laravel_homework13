@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
 
 class ProductController extends Controller
 {
@@ -11,7 +12,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return response()->json(['status' => 'index']);
+        return response(Product::all(), 200);
     }
 
     /**
@@ -19,7 +20,9 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $product = Product::create($request->all());
+        $product->save();
+        return response($product, 200);
     }
 
     /**
@@ -27,7 +30,7 @@ class ProductController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return response(Product::find($id), 200);
     }
 
     /**
@@ -35,7 +38,9 @@ class ProductController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $product = Product::find($id);
+        $product->update($request->all());
+        return response($product, 200);
     }
 
     /**
@@ -43,6 +48,8 @@ class ProductController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $product = Product::find($id);
+        $product->delete();
+        return response($product, 200);
     }
 }
